@@ -3,100 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTC 26256 | Innovation in Motion</title>
+    <title>FTC 26256 | Engineering the Future</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Animate on Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --apple-bg: #f5f5f7; --apple-text: #1d1d1f; }
-        body { font-family: 'Inter', sans-serif; background-color: white; color: var(--apple-text); scroll-behavior: smooth; }
-        .glass-nav { background: rgba(255, 255, 255, 0.72); backdrop-filter: saturate(180%) blur(20px); }
-        .bento-card { background: #f5f5f7; border-radius: 22px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .bento-card:hover { transform: scale(1.02); }
-        .hero-title { letter-spacing: -0.05em; line-height: 1.1; }
-        .btn-apple { background: #0071e3; color: white; border-radius: 980px; padding: 12px 24px; transition: all 0.3s ease; }
-        .btn-apple:hover { background: #0077ed; opacity: 0.9; }
+        :root { --apple-blue: #0066cc; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth; }
+        .glass-nav { background: rgba(0, 0, 0, 0.8); backdrop-filter: saturate(180%) blur(20px); }
+        .text-gradient { background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bento-dark { background: #121212; border: 1px solid #222; border-radius: 28px; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .bento-dark:hover { background: #1a1a1a; border-color: #444; transform: translateY(-5px); }
     </style>
 </head>
-<body>
+<body class="antialiased">
 
-    <!-- Apple-Style Global Nav -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200/50">
-        <div class="max-w-[1000px] mx-auto h-12 flex justify-between items-center px-6">
-            <div class="font-extrabold text-[19px] tracking-tight text-black">FTC 26256</div>
-            <div class="flex gap-8 text-[12px] font-normal text-gray-600">
-                <a href="#robot" class="hover:text-black transition">The Robot</a>
-                <a href="#team" class="hover:text-black transition">The Team</a>
-                <a href="#impact" class="hover:text-black transition">Impact</a>
-                <a href="#sponsor" class="hover:text-black transition">Sponsor</a>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
+        <div class="max-w-[1024px] mx-auto h-12 flex justify-between items-center px-6">
+            <div class="font-bold text-[21px] tracking-tight text-white">FTC 26256</div>
+            <div class="hidden md:flex gap-8 text-[12px] font-medium text-gray-400">
+                <a href="#robot" class="hover:text-white transition">The Machine</a>
+                <a href="#team" class="hover:text-white transition">The Collective</a>
+                <a href="#impact" class="hover:text-white transition">Impact</a>
+                <a href="#" class="bg-white text-black px-3 py-1 rounded-full text-[11px] font-bold">Support Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 text-center">
-        <span class="text-orange-600 font-semibold text-sm tracking-wide uppercase">New Season. New Era.</span>
-        <h1 class="hero-title text-6xl md:text-[90px] font-extrabold mt-4 mb-8">Engineering <br><span class="text-gray-400">for the next generation.</span></h1>
-        
-        <div class="flex justify-center gap-6 mb-16">
-            <a href="#" class="btn-apple font-semibold text-sm">Watch the Reveal</a>
-            <a href="#" class="text-[#0066cc] hover:underline flex items-center font-medium">Learn more <span class="ml-1 text-xs">&gt;</span></a>
-        </div>
-
-        <!-- Hero Large Image (Apple Product Style) -->
-        <div class="max-w-6xl mx-auto rounded-[32px] overflow-hidden bg-black h-[500px] shadow-2xl relative group">
-             <!-- Replace with high-res photo of your bot -->
-             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Robot 26256">
-             <div class="absolute bottom-10 left-10 text-left">
-                <p class="text-white text-2xl font-semibold italic">Introducing Alpha 2.0</p>
-                <p class="text-gray-400">Optimized for speed. Built for the win.</p>
-             </div>
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
+        <div class="text-center z-10" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-gradient text-6xl md:text-[110px] font-extrabold tracking-tighter leading-[1.05]">
+                Heavy Metal. <br>High Intelligence.
+            </h1>
+            <p class="text-gray-400 text-xl md:text-2xl mt-6 max-w-2xl mx-auto font-light">
+                Redefining the limits of FIRST Tech Challenge. 
+                Meet <span class="text-white font-medium">Hyperion-1</span>.
+            </p>
+            <div class="mt-10 flex gap-6 justify-center">
+                <a href="#robot" class="text-white bg-[#0071e3] px-8 py-3 rounded-full font-semibold hover:bg-[#0077ed] transition">See the Reveal</a>
+                <a href="#about" class="text-[#2997ff] flex items-center text-lg group">Our Story <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span></a>
+            </div>
         </div>
     </section>
 
-    <!-- Bento Grid (The Impact Section) -->
-    <section id="impact" class="max-w-7xl mx-auto px-6 py-20">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Bento Grid Section -->
+    <section class="max-w-[1200px] mx-auto px-6 py-32">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
             
-            <!-- Large Card -->
-            <div class="bento-card md:col-span-2 p-12 flex flex-col justify-end h-[400px]">
-                <h3 class="text-4xl font-bold mb-2 leading-tight">4000+ Students <br>Reached Worldwide.</h3>
-                <p class="text-gray-500 max-w-sm">From local workshops in Mississauga to international outreach programs.</p>
+            <!-- Vision Card -->
+            <div class="md:col-span-8 bento-dark p-12 flex flex-col justify-between min-h-[450px]" data-aos="fade-right">
+                <div class="text-blue-500 font-bold text-sm uppercase tracking-widest">The Vision</div>
+                <h2 class="text-5xl font-bold max-w-md tracking-tight mt-4">Precision in every millimeter.</h2>
+                <p class="text-gray-500 text-lg mt-auto">Our custom-machined drive train isn't just fast—it's surgical.</p>
             </div>
 
-            <!-- Small Card -->
-            <div class="bento-card p-12 flex flex-col justify-center items-center text-center">
-                <span class="text-6xl font-extrabold text-blue-600 mb-2">26</span>
-                <p class="text-sm font-semibold uppercase tracking-widest text-gray-400">Awards Received</p>
+            <!-- Stats Card -->
+            <div class="md:col-span-4 bento-dark p-12 flex flex-col items-center justify-center text-center" data-aos="fade-left">
+                <div class="text-6xl font-black text-white italic">26k</div>
+                <div class="text-gray-500 uppercase tracking-widest text-xs mt-4">Calculations Per Second</div>
             </div>
 
-            <!-- Small Card 2 -->
-            <div class="bento-card p-12 flex flex-col justify-center items-center text-center">
-                <span class="text-6xl font-extrabold text-orange-500 mb-2">100%</span>
-                <p class="text-sm font-semibold uppercase tracking-widest text-gray-400">Student Innovation</p>
+            <!-- Impact Card -->
+            <div class="md:col-span-4 bento-dark p-10" data-aos="fade-up" data-aos-delay="1000">
+                <h3 class="text-2xl font-bold mb-4">4.2k Hours</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">Dedicated to outreach and STEM education across the GTA.</p>
             </div>
 
-            <!-- Tall Card -->
-            <div class="bento-card p-12 md:col-span-1 flex flex-col justify-between bg-black text-white">
-                <h3 class="text-2xl font-bold">The Core Concept</h3>
-                <p class="text-gray-400 text-sm">We believe that robotics is more than building machines—it's building the leaders of tomorrow.</p>
-            </div>
-
-            <!-- Wide Card -->
-            <div class="bento-card md:col-span-2 p-12 flex items-center justify-between">
-                <div>
-                    <h3 class="text-3xl font-bold">Partner with 26256</h3>
-                    <p class="text-gray-500 mt-2">Help us push the boundaries of FIRST.</p>
+            <!-- Technology Card -->
+            <div class="md:col-span-8 bento-dark p-10 bg-gradient-to-br from-[#121212] to-[#001a33]" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex flex-col h-full">
+                    <h3 class="text-2xl font-bold">Autonomous Mastery</h3>
+                    <p class="text-gray-400 mt-2 text-sm">Computer vision powered by custom TensorFlow models.</p>
+                    <div class="mt-auto pt-8 flex gap-4">
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-300 border border-white/10">RoadRunner v2.0</span>
+                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-300 border border-white/10">AprilTag Tracking</span>
+                    </div>
                 </div>
-                <button class="bg-black text-white px-6 py-3 rounded-full text-sm font-bold">Get Started</button>
             </div>
-
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 text-center border-t border-gray-100">
-        <p class="text-gray-400 text-[12px]">&copy; 2026 FTC Team 26256. Designed with precision.</p>
-    </footer>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
 </body>
 </html>
