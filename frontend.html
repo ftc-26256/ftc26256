@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTC 26256 | The Future of Robotics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Modern Serif/Sans pairing for that 'Premium' feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; overflow-x: hidden; }
+        .font-header { font-family: 'Syncopate', sans-serif; }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)); }
+        .stat-card { border-left: 2px solid #e2e8f0; padding-left: 1.5rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Minimal Nav -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-10 py-4 flex justify-between items-center">
+        <div class="font-header text-lg font-bold tracking-tighter text-blue-900 uppercase">
+            FTC <span class="font-normal text-gray-400">26256</span>
+        </div>
+        <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-600">
+            <a href="#" class="hover:text-blue-600 transition">Home</a>
+            <a href="#" class="hover:text-blue-600 transition">Our Team</a>
+            <a href="#" class="hover:text-blue-600 transition">Robot</a>
+            <a href="#" class="hover:text-blue-600 transition">Outreach</a>
+            <a href="#" class="hover:text-blue-600 transition text-blue-900 border-b-2 border-blue-900">Sponsors</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Theory6 Video Vibe -->
+    <header class="relative h-[90vh] flex items-center justify-center text-white text-center">
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover -z-10">
+            <source src="your-robot-highlights.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 hero-gradient -z-10"></div>
+        
+        <div class="max-w-4xl px-6">
+            <h1 class="font-header text-5xl md:text-7xl mb-6 leading-tight tracking-tighter">
+                BUILDING PEOPLE, <br> <span class="italic text-blue-400">IGNITING PASSION.</span>
+            </h1>
+            <p class="text-lg md:text-xl font-light tracking-wide text-gray-200 mb-10 max-w-2xl mx-auto uppercase">
+                We are Team 26256 — An internationally recognized FTC team from Mississauga, Ontario.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-blue-600 hover:text-white transition">Latest Season</button>
+                <button class="px-10 py-4 border border-white/50 hover:bg-white/10 transition font-bold uppercase tracking-widest text-xs">Watch Reveal</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Impact Stats (The Theory6 "By the Numbers" look) -->
+    <section class="py-24 bg-white px-10">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="stat-card">
+                <h2 class="font-header text-4xl font-bold text-blue-900 italic">26256</h2>
+                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Team Number</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="font-header text-4xl font-bold text-blue-900">03+</h2>
+                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Awards Won</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="font-header text-4xl font-bold text-blue-900">1.2K</h2>
+                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">People Impacted</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="font-header text-4xl font-bold text-blue-900 italic">2024</h2>
+                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Rookie Year</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section (Minimalist White) -->
+    <section class="py-20 bg-gray-50 text-center">
+        <h3 class="font-header text-sm tracking-[0.4em] text-gray-400 uppercase mb-16">Supported By</h3>
+        <div class="flex flex-wrap justify-center items-center gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 px-10">
+            <!-- Add your sponsor images here -->
+            <img src="sponsor1.png" class="h-12 w-auto" alt="Sponsor">
+            <img src="sponsor2.png" class="h-12 w-auto" alt="Sponsor">
+            <img src="sponsor3.png" class="h-12 w-auto" alt="Sponsor">
+        </div>
+    </section>
+
+</body>
+</html>
