@@ -5,90 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FTC 26256 | Engineering the Future</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Animate on Scroll Library -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Krona+One&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --apple-blue: #0066cc; }
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth; }
-        .glass-nav { background: rgba(0, 0, 0, 0.8); backdrop-filter: saturate(180%) blur(20px); }
+        :root { --ap-accent: #ff4d4d; /* Dynamic red from logo */ }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        .font-krona { font-family: 'Krona+One', sans-serif; }
         .text-gradient { background: linear-gradient(180deg, #fff 0%, #888 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bento-dark { background: #121212; border: 1px solid #222; border-radius: 28px; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        .bento-dark:hover { background: #1a1a1a; border-color: #444; transform: translateY(-5px); }
+        .glass-nav { background: rgba(0, 0, 0, 0.85); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .btn-apple { background: #fff; color: #000; border-radius: 980px; padding: 12px 26px; transition: all 0.3s ease; }
+        .btn-apple:hover { background: var(--ap-accent); color: #fff; transform: translateY(-2px); }
+        .bento-card { background: rgba(18, 18, 18, 0.6); border-radius: 28px; border: 1px solid #222; overflow: hidden; backdrop-filter: blur(10px); transition: all 0.5s; }
+        .bento-card:hover { border-color: #333; box-shadow: 0 10px 40px rgba(255, 77, 77, 0.08); }
+        .ap-link { color: #2997ff; display: flex; items-center; }
+        .ap-link:hover { text-decoration: underline; }
+        
+        /* Smooth Scroll Helper */
+        html.lenis { h-height: auto; }
+        .lenis-smooth { scroll-behavior: auto !important; }
+        .lenis-smooth [data-lenis-prevent] { overs-croll-behavior: contain; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
-        <div class="max-w-[1024px] mx-auto h-12 flex justify-between items-center px-6">
-            <div class="font-bold text-[21px] tracking-tight text-white">FTC 26256</div>
-            <div class="hidden md:flex gap-8 text-[12px] font-medium text-gray-400">
+    <!-- NAV BAR -->
+    <nav class="fixed w-full z-50 glass-nav h-14 flex items-center">
+        <div class="max-w-[1024px] mx-auto w-full px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="image_1.png" alt="FTC 26256 Logo" class="h-6 w-auto"> <!-- Verbatim Logo Reference -->
+                <span class="font-krona text-[14px] tracking-tight text-white pt-1">26256</span>
+            </a>
+            <div class="hidden md:flex gap-9 text-[12px] font-medium text-gray-400">
                 <a href="#robot" class="hover:text-white transition">The Machine</a>
-                <a href="#team" class="hover:text-white transition">The Collective</a>
-                <a href="#impact" class="hover:text-white transition">Impact</a>
-                <a href="#" class="bg-white text-black px-3 py-1 rounded-full text-[11px] font-bold">Support Us</a>
+                <a href="#team" class="hover:text-white transition">Collective</a>
+                <a href="#sponsor" class="hover:text-white transition text-white">Partner</a>
             </div>
+            <button class="bg-white/10 text-white px-4 py-1 rounded-full text-[11px] font-medium border border-white/10 hover:bg-white hover:text-black">Connect</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-6 overflow-hidden">
-        <div class="text-center z-10" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="text-gradient text-6xl md:text-[110px] font-extrabold tracking-tighter leading-[1.05]">
-                Heavy Metal. <br>High Intelligence.
-            </h1>
-            <p class="text-gray-400 text-xl md:text-2xl mt-6 max-w-2xl mx-auto font-light">
-                Redefining the limits of FIRST Tech Challenge. 
-                Meet <span class="text-white font-medium">Hyperion-1</span>.
-            </p>
-            <div class="mt-10 flex gap-6 justify-center">
-                <a href="#robot" class="text-white bg-[#0071e3] px-8 py-3 rounded-full font-semibold hover:bg-[#0077ed] transition">See the Reveal</a>
-                <a href="#about" class="text-[#2997ff] flex items-center text-lg group">Our Story <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span></a>
+    <!-- KINETIC HERO SECTION -->
+    <header class="h-[110vh] w-full relative flex flex-col items-center justify-center pt-24 overflow-hidden">
+        
+        <!-- Large Background Title (Static fallback for Kinetic) -->
+        <div class="absolute inset-0 z-0 flex flex-col items-center justify-center font-krona" style="transform: translateZ(0);">
+             <h2 class="text-[35vw] font-extrabold text-[#111] leading-none select-none tracking-tighter kinetic-bg-text">FTC</h2>
+             <h2 class="text-[35vw] font-extrabold text-[#111] leading-none select-none tracking-tighter kinetic-bg-text">26256</h2>
+        </div>
+
+        <!-- Main Hero Content -->
+        <div class="z-10 text-center max-w-4xl px-6" data-aos="fade-up" data-aos-duration="1200">
+            <span class="text-[var(--ap-accent)] font-semibold text-sm tracking-wide uppercase mb-3 block">Engineering Redefined</span>
+            <h1 class="text-gradient text-7xl md:text-[120px] font-extrabold tracking-tighter leading-[1] mb-10">Titan-1 <br><span class="text-gray-400">Arrives</span>.</h1>
+            <p class="text-gray-400 text-xl md:text-2xl mt-12 max-w-2xl mx-auto font-light leading-relaxed">Introducing our definitive statement on competitive automation. Optimized for speed. Built for dominance.</p>
+            
+            <div class="mt-16 flex gap-7 justify-center flex-wrap">
+                <a href="#robot" class="btn-apple font-semibold">Explore The Tech</a>
+                <a href="#" class="ap-link text-lg group">Watch the Reveal <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span></a>
             </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center opacity-40">
+            <span class="text-xs uppercase text-gray-500 mb-2">Scroll to discover</span>
+            <div class="w-px h-16 bg-gray-600"></div>
+        </div>
+    </header>
+
+    <!-- TECHNICAL SPOTLIGHT (Interactive Callouts) -->
+    <section id="robot" class="min-h-screen bg-[#050505] text-white flex flex-col items-center py-40 px-6">
+        <div class="max-w-[1100px] w-full text-center" data-aos="fade-up">
+            <h2 class="text-gradient text-5xl md:text-[80px] font-extrabold tracking-tight max-w-2xl mx-auto mb-16">Intelligence. Measured in milliseconds.</h2>
+        </div>
+
+        <!-- Parallax Container for Robot Image/Render -->
+        <div class="relative max-w-7xl w-full h-[80vh] bg-[#111] rounded-[30px] shadow-2xl flex items-center justify-center p-20 mt-20" data-aos="zoom-in">
+             <div class="absolute inset-0 bg-gradient-to-br from-[#121212] to-[#010101] rounded-[30px]"></div>
+             
+             <!-- Technical Callouts (Placeholders) -->
+             <div class="absolute z-10 top-[20%] left-[10%] p-4 bg-white text-black rounded-lg text-xs" data-aos="fade-right" data-aos-delay="500">
+                 <span class="font-bold">Vision-A5 System</span><br>AprilTag Tracking v3.2
+             </div>
+             <div class="absolute z-10 bottom-[20%] right-[10%] p-4 bg-white text-black rounded-lg text-xs" data-aos="fade-left" data-aos-delay="700">
+                 <span class="font-bold">Torque-Drive G3</span><br>Machined 7075 Aluminum
+             </div>
+
+             <!-- Primary Image Placeholder -->
+             <img src="https://via.placeholder.com/1200x800/222222/555555?text=Hyperion-1+Render" class="z-0 w-full h-full object-contain" alt="Robot Spec Render">
         </div>
     </section>
 
-    <!-- Bento Grid Section -->
-    <section class="max-w-[1200px] mx-auto px-6 py-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <!-- ULTIMATE BENTO GRID (The Impact & Metrics) -->
+    <section class="max-w-[1240px] mx-auto px-6 py-40">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
             
-            <!-- Vision Card -->
-            <div class="md:col-span-8 bento-dark p-12 flex flex-col justify-between min-h-[450px]" data-aos="fade-right">
-                <div class="text-blue-500 font-bold text-sm uppercase tracking-widest">The Vision</div>
-                <h2 class="text-5xl font-bold max-w-md tracking-tight mt-4">Precision in every millimeter.</h2>
-                <p class="text-gray-500 text-lg mt-auto">Our custom-machined drive train isn't just fast—it's surgical.</p>
+            <!-- Long Vision Card -->
+            <div class="md:col-span-12 bento-card p-16 flex flex-col justify-end h-[500px]" data-aos="fade-up">
+                <div class="text-gradient text-[var(--ap-accent)] font-semibold text-sm tracking-wide mb-3">Titan-1 Concept</div>
+                <h3 class="text-5xl font-extrabold max-w-2xl tracking-tighter leading-tight">Every subsystem has a story. This is ours.</h3>
+                <p class="text-gray-500 text-xl mt-6 max-w-lg">Driven by 4,200 hours of design, iteration, and competitive rigor.</p>
             </div>
 
-            <!-- Stats Card -->
-            <div class="md:col-span-4 bento-dark p-12 flex flex-col items-center justify-center text-center" data-aos="fade-left">
-                <div class="text-6xl font-black text-white italic">26k</div>
-                <div class="text-gray-500 uppercase tracking-widest text-xs mt-4">Calculations Per Second</div>
+            <!-- Stats Column 1 -->
+            <div class="md:col-span-4 bento-card p-12 text-center flex flex-col items-center justify-center" data-aos="fade-right" data-aos-delay="200">
+                <span class="font-krona text-[var(--ap-accent)] text-7xl leading-none">26</span>
+                <span class="text-gray-500 uppercase tracking-widest text-xs mt-3">Calculations / Second</span>
             </div>
 
-            <!-- Impact Card -->
-            <div class="md:col-span-4 bento-dark p-10" data-aos="fade-up" data-aos-delay="1000">
-                <h3 class="text-2xl font-bold mb-4">4.2k Hours</h3>
-                <p class="text-gray-500 leading-relaxed text-sm">Dedicated to outreach and STEM education across the GTA.</p>
-            </div>
-
-            <!-- Technology Card -->
-            <div class="md:col-span-8 bento-dark p-10 bg-gradient-to-br from-[#121212] to-[#001a33]" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex flex-col h-full">
-                    <h3 class="text-2xl font-bold">Autonomous Mastery</h3>
-                    <p class="text-gray-400 mt-2 text-sm">Computer vision powered by custom TensorFlow models.</p>
-                    <div class="mt-auto pt-8 flex gap-4">
-                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-300 border border-white/10">RoadRunner v2.0</span>
-                        <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] text-gray-300 border border-white/10">AprilTag Tracking</span>
-                    </div>
+            <!-- Impact Summary -->
+            <div class="md:col-span-8 bento-card p-16" data-aos="fade-up" data-aos-delay="300">
+                <h4 class="text-2xl font-bold mb-4">4,000+ Students Reached</h4>
+                <p class="text-gray-500 leading-relaxed max-w-lg text-lg">We use our competitive success as a platform for global STEM education, hosting workshops from Mississauga to international summits.</p>
+                <div class="mt-8 flex gap-3 flex-wrap">
+                    <span class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs">AOS Integration</span>
+                    <span class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs">Kinetic Scrolling</span>
+                    <span class="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-xs">Parallax Ready</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- AP PARTNER SECTION (Sponsors) -->
+    <section id="sponsor" class="py-40 bg-[#0A0A0A] px-6 text-center">
+        <h3 class="font-krona text-3xl md:text-5xl tracking-tighter mb-20 text-gradient">Supported by Industry Leaders</h3>
+        <div class="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 max-w-6xl mx-auto">
+            <!-- Add 320x200 placeholder logos or your real logos here -->
+            <img src="https://via.placeholder.com/180x60/FFFFFF/222222?text=Titan+Machining" alt="Sponsor" class="h-10 w-auto">
+            <img src="https://via.placeholder.com/180x60/FFFFFF/222222?text=AprilTag" alt="Sponsor" class="h-10 w-auto">
+            <img src="https://via.placeholder.com/180x60/FFFFFF/222222?text=Robotics+GTA" alt="Sponsor" class="h-10 w-auto">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 border-t border-white/5 text-center text-gray-700 text-xs">
+        &copy; 2026 FTC Team 26256. Engineering the future. <!-- The future is now -->
+    </footer>
+
+    <!-- ANIMATION & SCROLL SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.28/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
-        AOS.init({ once: true, offset: 100 });
+        // 1. Initialize Animate On Scroll
+        AOS.init({ once: true, offset: 100, easing: 'ease-out-cubic', duration: 800 });
+
+        // 2. Initialize Ultra-Smooth Scroll (Lenis)
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // 3. GSAP Kinetic Text & Parallax
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Kinetic Title (FTC 26256)
+        gsap.to(".kinetic-bg-text", {
+            scrollTrigger: { trigger: "header", start: "top top", end: "bottom top", scrub: 0.5 },
+            scale: 1.15,
+            yPercent: -20,
+            opacity: 0.1,
+            stagger: 0.1
+        });
     </script>
 </body>
 </html>
