@@ -3,86 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTC 26256 | The Future of Robotics</title>
+    <title>FTC 26256 | Innovation in Motion</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Modern Serif/Sans pairing for that 'Premium' feel -->
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1a1a1a; overflow-x: hidden; }
-        .font-header { font-family: 'Syncopate', sans-serif; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)); }
-        .stat-card { border-left: 2px solid #e2e8f0; padding-left: 1.5rem; }
+        :root { --apple-bg: #f5f5f7; --apple-text: #1d1d1f; }
+        body { font-family: 'Inter', sans-serif; background-color: white; color: var(--apple-text); scroll-behavior: smooth; }
+        .glass-nav { background: rgba(255, 255, 255, 0.72); backdrop-filter: saturate(180%) blur(20px); }
+        .bento-card { background: #f5f5f7; border-radius: 22px; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .bento-card:hover { transform: scale(1.02); }
+        .hero-title { letter-spacing: -0.05em; line-height: 1.1; }
+        .btn-apple { background: #0071e3; color: white; border-radius: 980px; padding: 12px 24px; transition: all 0.3s ease; }
+        .btn-apple:hover { background: #0077ed; opacity: 0.9; }
     </style>
 </head>
 <body>
 
-    <!-- Sticky Minimal Nav -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-10 py-4 flex justify-between items-center">
-        <div class="font-header text-lg font-bold tracking-tighter text-blue-900 uppercase">
-            FTC <span class="font-normal text-gray-400">26256</span>
-        </div>
-        <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-600">
-            <a href="#" class="hover:text-blue-600 transition">Home</a>
-            <a href="#" class="hover:text-blue-600 transition">Our Team</a>
-            <a href="#" class="hover:text-blue-600 transition">Robot</a>
-            <a href="#" class="hover:text-blue-600 transition">Outreach</a>
-            <a href="#" class="hover:text-blue-600 transition text-blue-900 border-b-2 border-blue-900">Sponsors</a>
+    <!-- Apple-Style Global Nav -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-gray-200/50">
+        <div class="max-w-[1000px] mx-auto h-12 flex justify-between items-center px-6">
+            <div class="font-extrabold text-[19px] tracking-tight text-black">FTC 26256</div>
+            <div class="flex gap-8 text-[12px] font-normal text-gray-600">
+                <a href="#robot" class="hover:text-black transition">The Robot</a>
+                <a href="#team" class="hover:text-black transition">The Team</a>
+                <a href="#impact" class="hover:text-black transition">Impact</a>
+                <a href="#sponsor" class="hover:text-black transition">Sponsor</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Theory6 Video Vibe -->
-    <header class="relative h-[90vh] flex items-center justify-center text-white text-center">
-        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover -z-10">
-            <source src="your-robot-highlights.mp4" type="video/mp4">
-        </video>
-        <div class="absolute inset-0 hero-gradient -z-10"></div>
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 text-center">
+        <span class="text-orange-600 font-semibold text-sm tracking-wide uppercase">New Season. New Era.</span>
+        <h1 class="hero-title text-6xl md:text-[90px] font-extrabold mt-4 mb-8">Engineering <br><span class="text-gray-400">for the next generation.</span></h1>
         
-        <div class="max-w-4xl px-6">
-            <h1 class="font-header text-5xl md:text-7xl mb-6 leading-tight tracking-tighter">
-                BUILDING PEOPLE, <br> <span class="italic text-blue-400">IGNITING PASSION.</span>
-            </h1>
-            <p class="text-lg md:text-xl font-light tracking-wide text-gray-200 mb-10 max-w-2xl mx-auto uppercase">
-                We are Team 26256 — An internationally recognized FTC team from Mississauga, Ontario.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <button class="px-10 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs hover:bg-blue-600 hover:text-white transition">Latest Season</button>
-                <button class="px-10 py-4 border border-white/50 hover:bg-white/10 transition font-bold uppercase tracking-widest text-xs">Watch Reveal</button>
-            </div>
+        <div class="flex justify-center gap-6 mb-16">
+            <a href="#" class="btn-apple font-semibold text-sm">Watch the Reveal</a>
+            <a href="#" class="text-[#0066cc] hover:underline flex items-center font-medium">Learn more <span class="ml-1 text-xs">&gt;</span></a>
         </div>
-    </header>
 
-    <!-- Impact Stats (The Theory6 "By the Numbers" look) -->
-    <section class="py-24 bg-white px-10">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-            <div class="stat-card">
-                <h2 class="font-header text-4xl font-bold text-blue-900 italic">26256</h2>
-                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Team Number</p>
-            </div>
-            <div class="stat-card">
-                <h2 class="font-header text-4xl font-bold text-blue-900">03+</h2>
-                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Awards Won</p>
-            </div>
-            <div class="stat-card">
-                <h2 class="font-header text-4xl font-bold text-blue-900">1.2K</h2>
-                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">People Impacted</p>
-            </div>
-            <div class="stat-card">
-                <h2 class="font-header text-4xl font-bold text-blue-900 italic">2024</h2>
-                <p class="text-xs uppercase tracking-widest text-gray-400 mt-2">Rookie Year</p>
-            </div>
+        <!-- Hero Large Image (Apple Product Style) -->
+        <div class="max-w-6xl mx-auto rounded-[32px] overflow-hidden bg-black h-[500px] shadow-2xl relative group">
+             <!-- Replace with high-res photo of your bot -->
+             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" alt="Robot 26256">
+             <div class="absolute bottom-10 left-10 text-left">
+                <p class="text-white text-2xl font-semibold italic">Introducing Alpha 2.0</p>
+                <p class="text-gray-400">Optimized for speed. Built for the win.</p>
+             </div>
         </div>
     </section>
 
-    <!-- Sponsor Section (Minimalist White) -->
-    <section class="py-20 bg-gray-50 text-center">
-        <h3 class="font-header text-sm tracking-[0.4em] text-gray-400 uppercase mb-16">Supported By</h3>
-        <div class="flex flex-wrap justify-center items-center gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 px-10">
-            <!-- Add your sponsor images here -->
-            <img src="sponsor1.png" class="h-12 w-auto" alt="Sponsor">
-            <img src="sponsor2.png" class="h-12 w-auto" alt="Sponsor">
-            <img src="sponsor3.png" class="h-12 w-auto" alt="Sponsor">
+    <!-- Bento Grid (The Impact Section) -->
+    <section id="impact" class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Large Card -->
+            <div class="bento-card md:col-span-2 p-12 flex flex-col justify-end h-[400px]">
+                <h3 class="text-4xl font-bold mb-2 leading-tight">4000+ Students <br>Reached Worldwide.</h3>
+                <p class="text-gray-500 max-w-sm">From local workshops in Mississauga to international outreach programs.</p>
+            </div>
+
+            <!-- Small Card -->
+            <div class="bento-card p-12 flex flex-col justify-center items-center text-center">
+                <span class="text-6xl font-extrabold text-blue-600 mb-2">26</span>
+                <p class="text-sm font-semibold uppercase tracking-widest text-gray-400">Awards Received</p>
+            </div>
+
+            <!-- Small Card 2 -->
+            <div class="bento-card p-12 flex flex-col justify-center items-center text-center">
+                <span class="text-6xl font-extrabold text-orange-500 mb-2">100%</span>
+                <p class="text-sm font-semibold uppercase tracking-widest text-gray-400">Student Innovation</p>
+            </div>
+
+            <!-- Tall Card -->
+            <div class="bento-card p-12 md:col-span-1 flex flex-col justify-between bg-black text-white">
+                <h3 class="text-2xl font-bold">The Core Concept</h3>
+                <p class="text-gray-400 text-sm">We believe that robotics is more than building machines—it's building the leaders of tomorrow.</p>
+            </div>
+
+            <!-- Wide Card -->
+            <div class="bento-card md:col-span-2 p-12 flex items-center justify-between">
+                <div>
+                    <h3 class="text-3xl font-bold">Partner with 26256</h3>
+                    <p class="text-gray-500 mt-2">Help us push the boundaries of FIRST.</p>
+                </div>
+                <button class="bg-black text-white px-6 py-3 rounded-full text-sm font-bold">Get Started</button>
+            </div>
+
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="py-20 text-center border-t border-gray-100">
+        <p class="text-gray-400 text-[12px]">&copy; 2026 FTC Team 26256. Designed with precision.</p>
+    </footer>
 
 </body>
 </html>
