@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FTC 26256</title>
+    <title>FTC 26256 | St. Francis Xavier Robotics</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Krona+One&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --ap-accent: #ff3b30; }
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; margin: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; margin: 0; scroll-behavior: smooth; }
         .font-krona { font-family: 'Krona One', sans-serif; }
         .text-gradient { background: linear-gradient(180deg, #fff 0%, #666 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .glass-nav { background: rgba(0, 0, 0, 0.8); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .bento-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 32px; transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden; }
         .bento-card:hover { border-color: #333; transform: scale(1.01); background: #111; }
         
-        /* Logo Fallback Logic */
-        .logo-container img { display: block; height: 32px; width: auto; }
-        .logo-container img[src=""], .logo-container img:not([src]) { display: none; }
-        .logo-fallback { display: none; }
-        .logo-container img:error + .logo-fallback { display: flex; } /* Note: Managed by JS below */
-
+        /* Tiered Sponsor Styles */
+        .tier-platinum { background: linear-gradient(145deg, #1a1a1a, #000); border: 1px solid #333; }
+        .tier-gold { border-top: 4px solid #ffd700; }
+        
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000; }
@@ -34,10 +32,7 @@
     <nav class="fixed w-full z-50 glass-nav h-16 flex items-center">
         <div class="max-w-[1200px] mx-auto w-full px-8 flex justify-between items-center">
             <div class="logo-container flex items-center gap-3">
-                <!-- Verbatim Reference to your logo -->
-                <img id="teamLogo" src="image_1.png" alt="FTC 26256" onerror="showFallback()">
-                
-                <!-- Fallback: High-end CSS Logo if image is missing -->
+                <img id="teamLogo" src="image_1.png" alt="FTC 26256" onerror="showFallback()" class="h-8 w-auto">
                 <div id="fallbackLogo" class="hidden flex items-center gap-2">
                     <div class="w-8 h-8 bg-[var(--ap-accent)] rounded-lg flex items-center justify-center font-bold text-white text-[10px]">26</div>
                     <span class="font-krona text-sm tracking-tighter">FTC 26256</span>
@@ -45,12 +40,12 @@
             </div>
             
             <div class="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400">
-                <a href="#robot" class="hover:text-white transition">First</a>
-                <a href="#team" class="hover:text-white transition">Tech</a>
-                <a href="#impact" class="hover:text-white transition">Challenge</a>
+                <a href="#robot" class="hover:text-white transition">The Machine</a>
+                <a href="#team" class="hover:text-white transition">Collective</a>
+                <a href="#sponsors" class="hover:text-white transition">Sponsors</a>
             </div>
             
-            <a href="mailto:contact@ftc26256.com" class="bg-white text-black px-5 py-2 rounded-full text-[11px] font-bold hover:bg-[var(--ap-accent)] hover:text-white transition-all">Sponsor</a>
+            <a href="#sponsors" class="bg-white text-black px-5 py-2 rounded-full text-[11px] font-bold hover:bg-[var(--ap-accent)] hover:text-white transition-all">Partner With Us</a>
         </div>
     </nav>
 
@@ -59,93 +54,113 @@
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 opacity-10 font-krona text-[40vw] select-none text-white pointer-events-none">26256</div>
         
         <div data-aos="fade-up" data-aos-duration="1500">
-            <h1 class="text-gradient text-6xl md:text-[120px] font-extrabold tracking-tighter leading-none mb-6">
-                St.Francis Xavier<br>First. Robotics. Team.
+            <h1 class="text-gradient text-6xl md:text-[100px] font-extrabold tracking-tighter leading-none mb-6 font-krona">
+                ST. FRANCIS XAVIER<br><span class="text-white">ROBOTICS.</span>
             </h1>
             <p class="text-gray-400 text-xl md:text-2xl font-light max-w-2xl mx-auto mb-10">
-                A masterpiece of FTC engineering. Designed in Mississauga, built for the world stage.
+                Team 26256. Engineering for the next generation of innovators in Mississauga.
             </p>
             <div class="flex gap-6 justify-center">
-                <button class="bg-white text-black px-8 py-4 rounded-full font-bold text-sm">Awards</button>
-                <button class="text-blue-500 font-bold flex items-center gap-2">Become a Sponsor <span class="text-xs">▶</span></button>
+                <a href="#robot" class="bg-white text-black px-8 py-4 rounded-full font-bold text-sm">Our Season</a>
+                <a href="#sponsors" class="text-blue-500 font-bold flex items-center gap-2">Become a Sponsor <span class="text-xs">▶</span></a>
             </div>
         </div>
     </section>
 
-    <!-- BENTO GRID SECTION -->
-    <section id="robot" class="max-w-[1300px] mx-auto px-6 py-32">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-            
-            <!-- Main Tech Card -->
-            <div class="md:col-span-8 bento-card p-12 h-[500px] flex flex-col justify-end" data-aos="fade-up">
-                <div class="absolute top-0 right-0 p-12 opacity-20 font-krona text-8xl">01</div>
-                <h3 class="text-4xl font-bold mb-4 italic">7075 Aluminum Chassis</h3>
-                <p class="text-gray-500 max-w-md text-lg">Aerospace-grade durability meets ultra-lightweight agility. Reduced 15% of total mass without sacrificing structural integrity.</p>
-            </div>
+    <!-- SPONSOR PAGE SECTION -->
+    <section id="sponsors" class="max-w-[1200px] mx-auto px-6 py-32 border-t border-white/5">
+        <div class="text-center mb-24" data-aos="fade-up">
+            <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Our Partners.</h2>
+            <p class="text-gray-500 text-xl max-w-2xl mx-auto">Sponsorship fuels our innovation. Join the companies that make world-class engineering possible for our students.</p>
+        </div>
 
-            <!-- Stats Card -->
-            <div class="md:col-span-4 bento-card p-12 flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#0a0a0a] to-[#1a0505]" data-aos="fade-left">
-                <div class="text-6xl font-black text-[var(--ap-accent)] mb-2 uppercase italic">Sub 2s</div>
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-500">Auto-Alignment Speed</p>
-            </div>
-
-            <!-- Software Card -->
-            <div class="md:col-span-4 bento-card p-10" data-aos="fade-right">
-                <h4 class="text-xl font-bold mb-4">Vision Intelligence</h4>
-                <p class="text-gray-500 text-sm leading-relaxed">Integrated AprilTag localization for perfect field positioning, every time. Zero-latency pathing.</p>
-            </div>
-
-            <!-- Impact Wide Card -->
-            <div class="md:col-span-8 bento-card p-10 flex items-center justify-between" data-aos="fade-up">
-                <div>
-                    <h4 class="text-2xl font-bold">The 26256 Impact</h4>
-                    <p class="text-gray-500 mt-2">Empowering 4000+ students through robotics education and outreach.</p>
+        <!-- Tier: Platinum -->
+        <div class="mb-20" data-aos="fade-up">
+            <h3 class="text-center font-krona text-[10px] tracking-[0.4em] text-gray-500 uppercase mb-10">Platinum Partners</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bento-card p-16 flex items-center justify-center h-64 tier-platinum">
+                    <!-- Replace with Sponsor Logo -->
+                    <span class="text-gray-700 font-bold text-2xl tracking-widest uppercase">Your Logo Here</span>
                 </div>
-                <div class="flex -space-x-4">
-                    <div class="w-12 h-12 rounded-full border-2 border-black bg-gray-800"></div>
-                    <div class="w-12 h-12 rounded-full border-2 border-black bg-gray-700"></div>
-                    <div class="w-12 h-12 rounded-full border-2 border-black bg-gray-600"></div>
+                <div class="bento-card p-16 flex items-center justify-center h-64 tier-platinum">
+                    <span class="text-gray-700 font-bold text-2xl tracking-widest uppercase">Sponsor One</span>
                 </div>
             </div>
+        </div>
 
+        <!-- Tier: Gold & Silver -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6" data-aos="fade-up">
+            <div class="bento-card p-8 flex items-center justify-center h-32 opacity-60 grayscale hover:grayscale-0 transition">Sponsor B</div>
+            <div class="bento-card p-8 flex items-center justify-center h-32 opacity-60 grayscale hover:grayscale-0 transition">Sponsor C</div>
+            <div class="bento-card p-8 flex items-center justify-center h-32 opacity-60 grayscale hover:grayscale-0 transition">Sponsor D</div>
+            <div class="bento-card p-8 flex items-center justify-center h-32 opacity-60 grayscale hover:grayscale-0 transition">Sponsor E</div>
+        </div>
+
+        <div class="mt-20 text-center">
+            <a href="mailto:contact@ftc26256.com" class="inline-block border border-white/20 px-10 py-5 rounded-full font-bold hover:bg-white hover:text-black transition">Download Sponsorship Packet</a>
+        </div>
+    </section>
+
+    <!-- TEAM COLLECTIVE SECTION -->
+    <section id="team" class="py-32 bg-[#050505] px-6">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div data-aos="fade-right">
+                    <h2 class="text-5xl md:text-7xl font-bold tracking-tighter">The Collective.</h2>
+                    <p class="text-gray-500 text-xl mt-4">A student-led force of nature.</p>
+                </div>
+                <div class="flex gap-4" data-aos="fade-left">
+                    <div class="text-right">
+                        <div class="text-3xl font-bold">100%</div>
+                        <div class="text-[10px] text-gray-600 uppercase tracking-widest">Student Driven</div>
+                    </div>
+                    <div class="w-px h-12 bg-white/10 mx-4"></div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold">40+</div>
+                        <div class="text-[10px] text-gray-600 uppercase tracking-widest">Members</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bento-card p-10 h-80 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="font-krona text-xs text-blue-500">Software</h4>
+                    <p class="text-xl font-medium">Coding autonomous intelligence and real-time vision processing.</p>
+                </div>
+                <div class="bento-card p-10 h-80 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="font-krona text-xs text-orange-500">Design</h4>
+                    <p class="text-xl font-medium">CAD-driven iteration and precision aerospace-grade manufacturing.</p>
+                </div>
+                <div class="bento-card p-10 h-80 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="font-krona text-xs text-purple-500">Business</h4>
+                    <p class="text-xl font-medium">Managing logistics, branding, and high-impact community outreach.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="py-20 text-center border-t border-white/5">
-        <p class="text-gray-600 text-xs tracking-widest uppercase mb-4">&copy; 2026 FTC TEAM 26256. ALL RIGHTS RESERVED.</p>
-        <div class="flex justify-center gap-8 text-gray-400 text-xs">
-            <a href="#">Instagram</a>
-            <a href="#">GitHub</a>
-            <a href="#">Sponsorship</a>
+        <img src="image_1.png" alt="" onerror="this.style.display='none'" class="h-8 mx-auto mb-8 opacity-50">
+        <p class="text-gray-600 text-xs tracking-widest uppercase mb-4 font-krona">FTC TEAM 26256 &bull; Mississauga, ON</p>
+        <div class="flex justify-center gap-8 text-gray-400 text-[11px] font-bold uppercase tracking-widest">
+            <a href="#" class="hover:text-white">Instagram</a>
+            <a href="#" class="hover:text-white">GitHub</a>
+            <a href="#" class="hover:text-white">Email Us</a>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Initialize AOS
         AOS.init({ once: true, duration: 1000 });
-
-        // Logo Fallback Logic
         function showFallback() {
             document.getElementById('teamLogo').style.display = 'none';
             document.getElementById('fallbackLogo').classList.remove('hidden');
         }
-
-        // Check if logo exists on load (double safety)
         window.addEventListener('load', () => {
             const img = document.getElementById('teamLogo');
-            if (!img.complete || img.naturalWidth === 0) {
-                showFallback();
-            }
-        });
-
-        // Hero Parallax effect
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            gsap.to('.kinetic-bg-text', { y: scrolled * 0.5, opacity: 1 - (scrolled / 800) });
+            if (!img.complete || img.naturalWidth === 0) showFallback();
         });
     </script>
 </body>
